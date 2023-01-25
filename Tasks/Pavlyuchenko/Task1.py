@@ -1,10 +1,8 @@
 print('CALCULATION OF THE TOTAL DEPOSIT AMOUNT \n  FILLING RULES: (...)\n ')
-
 while True:
     answ = int(input('Would u like to continue? (1 - Yes, 0 - No): '))
 
     if answ == 1:
-
         amount1 = float(input('---Enter the initial amount,$: '))
         term = int(input('---Enter the term, years: '))
         per = float(input('---Enter the annual per, %: '))
