@@ -2,25 +2,21 @@ def beSureIsDigit():
      global x  
      x = input()
      while x.isdigit()==0:
-               print('ВЫ ВВЕЛИ СИМВОЛ А НЕ ЧИСЛО!!!ВВОДИТЕ ЗАНОВО!!!\n')
-               x = input()
+               x = input('ВЫ ВВЕЛИ СИМВОЛ А НЕ ЧИСЛО!!!ВВОДИТЕ ЗАНОВО!!!\n')
                if x.isdigit()==1:
                    break
               
-print('Рассчитайте вашу прибыль от вклада.\nВведите сумму депозита в рублях')
-print('a=', end= ' ')
+print('Рассчитайте вашу прибыль от вклада.\nВведите сумму депозита в рублях\na=', end= ' ')
 beSureIsDigit()
 a = int(x)
 
    
-print('Введите количество месяцев')
-print('b=', end= ' ')
+print('Введите количество месяцев\nb=', end= ' ')
 beSureIsDigit()
 b = int(x)
 
        
-print('Введите желаемый процент годовых')
-print('с=', end= ' ')
+print('Введите желаемый процент годовых\nс=', end= ' ')
 beSureIsDigit()
 c = int(x)
 c=c/12
