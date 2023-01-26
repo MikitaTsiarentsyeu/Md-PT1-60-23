@@ -10,21 +10,19 @@ def beSureIsDigit():
 print('Рассчитайте вашу прибыль от вклада.\nВведите сумму депозита в рублях')
 print('a=', end= ' ')
 beSureIsDigit()
-a = x
-a=int(a)
+a = int(x)
 
    
 print('Введите количество месяцев')
 print('b=', end= ' ')
 beSureIsDigit()
-b = x
-b=int(b)
+b = int(x)
+
        
 print('Введите желаемый процент годовых')
 print('с=', end= ' ')
 beSureIsDigit()
-c = x
-c=int(c)
+c = int(x)
 c=c/12
 
 
