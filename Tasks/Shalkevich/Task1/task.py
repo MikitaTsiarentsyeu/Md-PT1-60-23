@@ -110,7 +110,3 @@ while True:
     except ValueError:
         print("Вы ошиблись банком? Нет такой функции, попробуйте ещё")
         continue
-
-
-
-
