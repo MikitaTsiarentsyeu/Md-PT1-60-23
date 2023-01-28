@@ -18,6 +18,24 @@ while True:
     print("Так.. Сейчас посчитаю... так.. 1... Длина твоего текста ", Tex1, " Символов! Из которых ", Tex, "из которых")
     print()
     print (pd.Series(list(ansver)).value_counts())
+    print("Ты признаёшь мою победу, или повторить?) (1 - повторить), (2 - Признать, победу")
+    a = input()
+    try:
+        a = int(a)
+        if a == 1:
+            print("Не можешь признать мою победу?). Хорошо")
+            continue
+        elif a == 2:
+            print("ДА! Я вновь победил! Но... Ты тоже ничего, давай ещё как-нибудь поиграем")
+            raise SystemExit
+        else:
+            print("Я знал, что я лучший! Прощай!")
+            raise SystemExit
+    except ValueError:
+        print("Я знал, что я лучший! Прощай!")
+        raise SystemExit
+
+
 
 
 
