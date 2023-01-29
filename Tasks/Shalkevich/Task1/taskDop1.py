@@ -25,7 +25,7 @@ while True:
             print("Так.. Сейчас посчитаю... так.. 1... Длина твоего текста ", Tex1,
             " Символов! Из которых ", Tex, "из которых")
             print()
-            print(c)
+            print(dict(Counter(c)))
         elif W ==2:
             print(list(ansver))
             print (pd.Series(list(ansver)).value_counts())
