@@ -51,22 +51,3 @@ while True:
     except ValueError:
         print("Я знал, что я лучший! Прощай!")
         raise SystemExit
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
