@@ -13,17 +13,14 @@ def beSureIsDigit():
                     x = input('ВЫ ВВЕЛИ СИМВОЛ А НЕ ЧИСЛО!!!ВВОДИТЕ ЗАНОВО!!!\n')
                     check = x.find(".")
                     break
-                if x == y:
-                    x = input('ВЫ ВВЕЛИ СИМВОЛ А НЕ ЧИСЛО!!!ВВОДИТЕ ЗАНОВО!!!\n')
-                    check = x.find(".")
-                    break
+                
               
 print('Рассчитайте вашу прибыль от вклада.\nВведите сумму депозита в рублях\na=', end= ' ')
 beSureIsDigit()
 a = float(x)
 
    
-print('Введите количество месяцев\nb=', end= ' ')
+print('Введите целое количество месяцев\nb=', end= ' ')
 beSureIsDigit()
 b = int(x)
 
