@@ -2,12 +2,21 @@ def beSureIsDigit():
     global x  
     x = input()
     check = x.find(".")
-    if check == -1:
-        while (x.isdigit()==0 ):
+    flag = False
+    while flag != True:
+            for i in range (len(x)):
+                if (x[i].isdigit()==1 or (check==i and (len(x)>2))):
+                    flag = True
+                    continue
+                else:
+                    flag = False
                     x = input('ВЫ ВВЕЛИ СИМВОЛ А НЕ ЧИСЛО!!!ВВОДИТЕ ЗАНОВО!!!\n')
                     check = x.find(".")
-                    if check != -1:
-                        break
+                    break
+                if x == y:
+                    x = input('ВЫ ВВЕЛИ СИМВОЛ А НЕ ЧИСЛО!!!ВВОДИТЕ ЗАНОВО!!!\n')
+                    check = x.find(".")
+                    break
               
 print('Рассчитайте вашу прибыль от вклада.\nВведите сумму депозита в рублях\na=', end= ' ')
 beSureIsDigit()
