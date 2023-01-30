@@ -1,0 +1,11 @@
+dep = int(input("Enter the deposit amount in rubles: "))
+term = int(input("Enter the term of deposit in years: "))
+rate = int(input("Enter interest rate: "))
+year = 365
+term_b = term * 365
+s = (dep*term_b*rate//year)//100
+summ = str(s + dep)
+term = str(term)
+
+
+print(f"Total amount for {term} year(s) {summ} rubles")
