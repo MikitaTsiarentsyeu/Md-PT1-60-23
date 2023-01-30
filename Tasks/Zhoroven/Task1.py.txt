@@ -9,5 +9,3 @@ term = str(term)
 
 
 print(f"Total amount for {term} year(s) {summ} rubles")
-
-
