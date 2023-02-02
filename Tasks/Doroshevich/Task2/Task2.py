@@ -9,6 +9,10 @@ if not choice.isnumeric() or not 1 <= int(choice) <= 2:
 
 if int(choice) == 1:
     time = f"{datetime.datetime.now().hour}:{datetime.datetime.now().minute}"
+    if len(time.split(':')[1]) == 1:
+        time = time.split(':')[0] + ":0" + time.split(':')[1]
+    elif len(time.split(':')[0]) == 1:
+        time = "0" + time.split(':')[0] + ":" + time.split(':')[1]
 else:
     time = input("Введите время в формате чч:мм:\n")
     if len(time) != 5 or time[2] != ':':
