@@ -45,6 +45,10 @@ if choice ==2:
 
     c_h, c_m = int(c_h), int(c_m)
 
+    if c_h > 24 or c_m > 60:
+        print('вы ввели неверный формат')
+        exit()
+
 else:
     current_time = datetime.datetime.now()
     c_h = current_time.hour
