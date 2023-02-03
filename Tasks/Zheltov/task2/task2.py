@@ -27,5 +27,4 @@ if m>30:
     print(x+"-"+first_d[m]+" "+second_d[h+1])
 elif m<45: 
     print(x+"-"+serd_d[h]+" "+"час"+" "+first_d[m])
-print("Классно что это работает :).")
-  
+print("Классно что это работает :)")
