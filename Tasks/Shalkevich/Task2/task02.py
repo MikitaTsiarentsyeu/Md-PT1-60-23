@@ -2,9 +2,8 @@ import datetime
 
 today = datetime.datetime.today()
 day = datetime.datetime.today() - datetime.timedelta(hours=12)
-FM = 0
-mi,ho = today.strftime( "%M"), today.strftime( "%H")
-m , h= int(mi), int(ho)
+mi,ho = int(today.strftime( "%M")), int(today.strftime( "%H"))
+
 
 Pol = {0 :"Полчаса ночи", 1 : "Полвторого часа ночи", 2 : "Полтретьего часа ночи",
 3 : "Полчетвёртого часа утра", 4 : "Полпятого часа утра", 5 : "Полшестого часа утра", 6 :  "Полседьмого часа утра",
@@ -58,24 +57,24 @@ while True:
         if answer == 1:
             print("Прекрасно, всегда приятно помогать настраивать часы, обладателя прекрасного вкуса к времени)\n"
                   "сейчас время", today.strftime( "%Y-%m-%d-%H:%M."))
-            if m == 0:
-                print(Cel.get(h))
-            elif m == 30:
-                print(Pol.get(h))
-            elif m == 54:
-                print(NEC.get(h))
+            if mi == 0:
+                print(Cel.get(ho))
+            elif mi == 30:
+                print(Pol.get(ho))
+            elif mi == 54:
+                print(NEC.get(ho))
             else:
-                print(Cel.get(h) + " и", z.get(m))
+                print(Cel.get(ho) + " и", z.get(mi))
         elif answer == 2:
             print("Прекрасно, пусть будет по твоему, Специально для вас, время", day.strftime( "%Y-%m-%d-%H:%M."))
-            if m == 0:
-                print(Cel.get(h))
-            elif m == 30:
-                print(Pol.get(h))
-            elif m == 54:
-                print(NEC.get(h))
+            if mi == 0:
+                print(Cel.get(ho))
+            elif mi == 30:
+                print(Pol.get(ho))
+            elif mi == 54:
+                print(NEC.get(ho))
             else:
-                print(Cel.get(h) + " и", z.get(m))
+                print(Cel.get(ho) + " и", z.get(mi))
         elif answer == 3:
             print("Что??? МОИ ВАРИАНТЫ ДЛЯ ТЕБЯ СЛИШКОМ ХОРОШИ!!?\n"
                   "Хорошо.. вводи свой формат времени (xx:xx)")
@@ -100,4 +99,3 @@ while True:
             print ("УВАЖАЕМЫЙ пользователь, пожалуйста, выбирите 1 или 2,3")
     except ValueError:
         print ("УВАЖАЕМЫЙ пользователь, пожалуйста, выбирите 1 или 2,3")
-        

@@ -14,16 +14,16 @@ while True:
         W = int(W)
         if W == 1:
             Tex1 = len(ansver)
-            Tex = {'Пробел': 0, 'Букв': 0, 'Цифр': 0, 'Символы': 0}
+            Tex = {'space': 0, 'letters': 0, 'numbers': 0, 'symbols': 0}
             for i in ansver:
                 if i.isalpha():
-                    Tex['Букв'] += 1
+                    Tex['letters'] += 1
                 elif i.isdigit():
-                    Tex['Цифр'] += 1
+                    Tex['numbers'] += 1
                 elif i.isspace():
-                    Tex['Пробел'] += 1
+                    Tex['space'] += 1
                 else:
-                    Tex['Символы'] += 1
+                    Tex['symbols'] += 1
             print("Так.. Сейчас посчитаю... так.. 1... Длина твоего текста ", Tex1,
                   " Символов! Из которых ", Tex, "из которых")
             print()
@@ -35,16 +35,16 @@ while True:
         else:
             print("Хорошо.. Для тебя создам третий вариант)")
             Tex1 = len(ansver)
-            Tex = {'Пробел': 0, 'Букв': 0, 'Цифр': 0, 'Символы': 0}
+            Tex = {'space': 0, 'letters': 0, 'numbers': 0, 'symbols': 0}
             for i in ansver:
                 if i.isalpha():
-                    Tex['Букв'] += 1
+                    Tex['letters'] += 1
                 elif i.isdigit():
-                    Tex['Цифр'] += 1
+                    Tex['numbers'] += 1
                 elif i.isspace():
-                    Tex['Пробел'] += 1
+                    Tex['space'] += 1
                 else:
-                    Tex['Символы'] += 1
+                    Tex['symbols'] += 1
             for number in set(ansver):
                 n[number] = ansver.count(number)
         print("Так.. Сейчас посмотрим", Tex, "из которых,", n)
