@@ -1,9 +1,9 @@
 from  collections import Counter
 import pandas as pd
 # Что за не уважения к квадратам?) За кубическое уровнения 100 баллов, а за квадратное 0((
-print("Привет! ЧЕЛОВЕК. Я КОМПЬЮТЕР И Я УМНЕЕ ТЕБЯ! У меня памяти 16 мегабайт!!")
+print("Привет! ЧЕЛОВЕК. Я КОМПЬЮТЕР И Я УМНЕЕ ТЕБЯ! У меня памяти 16 мегабайт!! \n")
 # Интересно, сколько людей помнят этот мем?)
-print()
+n = {}
 print("Я умею читать, писать, и... много чего умею. Вот ты сейчас напиши мне и я посчитаю всё!")
 while True:
     ansver = str(input("Введи, что угодно.Я могу всё! "))
@@ -14,24 +14,40 @@ while True:
         W = int(W)
         if W == 1:
             Tex1 = len(ansver)
-            Tex = {'Пробел': 0, 'Букв': 0, 'Цифр': 0}
+            Tex = {'Пробел': 0, 'Букв': 0, 'Цифр': 0, 'Символы': 0}
             for i in ansver:
                 if i.isalpha():
                     Tex['Букв'] += 1
                 elif i.isdigit():
                     Tex['Цифр'] += 1
-                else:
+                elif i.isspace():
                     Tex['Пробел'] += 1
+                else:
+                    Tex['Символы'] += 1
             print("Так.. Сейчас посчитаю... так.. 1... Длина твоего текста ", Tex1,
-            " Символов! Из которых ", Tex, "из которых")
+                  " Символов! Из которых ", Tex, "из которых")
             print()
             print(dict(Counter(c)))
-        elif W ==2:
+
+        elif W == 2:
             print(list(ansver))
-            print (pd.Series(list(ansver)).value_counts())
+            print(pd.Series(list(ansver)).value_counts())
         else:
-            print("Глуппый человек, я прошу выбрать 1 или 2 - это такие цифры, если не знаешь")
-            continue
+            print("Хорошо.. Для тебя создам третий вариант)")
+            Tex1 = len(ansver)
+            Tex = {'Пробел': 0, 'Букв': 0, 'Цифр': 0, 'Символы': 0}
+            for i in ansver:
+                if i.isalpha():
+                    Tex['Букв'] += 1
+                elif i.isdigit():
+                    Tex['Цифр'] += 1
+                elif i.isspace():
+                    Tex['Пробел'] += 1
+                else:
+                    Tex['Символы'] += 1
+            for number in set(ansver):
+                n[number] = ansver.count(number)
+        print("Так.. Сейчас посмотрим", Tex, "из которых,", n)
     except ValueError:
         print("Глуппый человек, я прошу выбрать 1 или 2 - это такие цифры, если не знаешь")
         continue
