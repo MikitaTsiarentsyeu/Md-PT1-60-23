@@ -1,5 +1,3 @@
-
-
 string = str(input('Введите любые символы:\n'))
 d = {'Спец.символы': 0, 'Буквы': 0, 'Цифры': 0}
 q = {}
@@ -14,7 +12,6 @@ for i in string:
 for char in set(string):
 
     q[char] = string.count(char)
-
 
 print(f'Цифры:{d["Цифры"]}\nБуквы:{d["Буквы"]}\nСпец.символы:{d["Спец.символы"]}')
 print(q)
