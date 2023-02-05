@@ -101,9 +101,9 @@ if choice == 1:
             if m == 0:
                   print(integer_rus.get(h), integer_eng.get(h))
             elif m == 30:
-                  print(half_rus(h), half_eng(h))
+                  print(half_rus.get(h), half_eng.get(h))
             elif m == 54:
-                  print(without_rus(h), without_eng(h))
+                  print(without_rus.get(h), without_eng.get(h))
             else:
                   print(f' In 24hh format-{integer_rus.get(h)} и {minute_rus.get(m)}\n',
                         f'In 12hh format-{minute_eng.get(m)} and {integer_eng.get(h)}')
@@ -112,9 +112,9 @@ if choice == 1:
             if m == 0:
                   print(integer_rus.get(h), (integer_eng.get(h)))
             elif m == 30:
-                  print(half_rus(h), half_eng(h))
+                  print(half_rus.get(h), half_eng.get(h))
             elif m == 54:
-                  print(without_rus(h), without_eng(h))
+                  print(without_rus.get(h), without_eng.get(h))
             else:
                   print(f' In 24hh format-{integer_rus.get(h)} и {minute_rus.get(m)}\n',
                         f'In 12hh format-{minute_eng.get(m)} {integer_eng.get(h)}')
@@ -123,21 +123,21 @@ if choice == 1:
             if m == 0:
                   print(integer_rus.get(h), integer_eng.get(h))
             elif m == 30:
-                  print(half_rus(h), integer_eng(h))
+                  print(half_rus.get(h), integer_eng.get(h))
             elif m == 54:
-                  print(without_rus(h), without_eng(h))
+                  print(without_rus.get(h), without_eng.get(h))
             else:
                   print(f' In 24hh format-{integer_rus.get(h)} и {minute_rus.get(m)}\n',
-                        f'In 12hh format-{minute_eng.get(m)} {integer_eng.get(h + 1)}')
+                        f'In 12hh format-{minute_eng.get(m)} {integer_eng.get(h)}')
 
       if h < 12:
             print(f" It's {h}:{m} o'clock")
             if m == 0:
                   print(integer_rus.get(h), integer_eng.get(h))
             elif m == 30:
-                  print(half_rus(h), half_eng(h))
+                  print(half_rus.get(h), half_eng.get(h))
             elif m == 54:
-                  print(without_rus(m), without_eng(m))
+                  print(without_rus.get(m), without_eng.get(m))
             else:
                   print(f' In 24hh format-{integer_rus.get(h)} и {minute_rus.get(m)}\n',
                         f'In 12hh format-{minute_eng.get(m)} {integer_eng.get(h)}')
@@ -171,4 +171,3 @@ elif choice == 2:
 
 else:
       print(f"\033[31mYou've entered incorrect information, try again later!")
-input()
