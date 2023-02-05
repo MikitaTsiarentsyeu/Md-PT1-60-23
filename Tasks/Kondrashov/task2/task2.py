@@ -128,7 +128,7 @@ if choice == 1:
                   print(without_rus.get(h), without_eng.get(h))
             else:
                   print(f' In 24hh format-{integer_rus.get(h)} и {minute_rus.get(m)}\n',
-                        f'In 12hh format-{minute_eng.get(m)} {integer_eng.get(h)}')
+                        f'In 12hh format-{minute_eng.get(m)} {integer_eng.get(h + 1)}')
 
       if h < 12:
             print(f" It's {h}:{m} o'clock")
@@ -144,7 +144,8 @@ if choice == 1:
 
 
 elif choice == 2:
-      user_time_hh, user_time_mm = int(input('Enter an hours:\n'), int(input('Enter a minutes:\n')))
+      user_time_hh = int(input('Enter an hours:\n'))
+      user_time_mm = int(input('Enter a minutes:\n'))
       if user_time_mm < 10:
             print(f' {user_time_hh}:0{user_time_mm}')
             if user_time_mm == 0:
