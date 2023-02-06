@@ -93,7 +93,7 @@ dict4 = {
     15 : 'пятнадцати минут'
 }
 
-x=int(input("Для просмотра текущего времени введите - 0\nЕсли хотите ввести свое время введите - 1 \n"))
+x=int(input("Для просмотра текущего времени введите - 0\n \nЕсли хотите ввести свое время введите - 1 \n"))
 
 if x < 0:
     print(f"Надо ввести 0 или 1, а не {x} -_-")
@@ -112,6 +112,8 @@ elif x == 1:
         print("Неправильный ввод! >:(")
         exit()
     chas, minyta = int(time[:2]), int(time[3:])
+    print()
+    print("Ваше время:")
 
 if chas >= 12 and chas < 24:
     chas = chas - 12
@@ -124,4 +126,6 @@ elif minyta == 30:
     print("Половина", dict3[chas])
 elif minyta >= 45 and minyta < 60:
     print("Без", dict4[60-minyta], dict3[chas])
+print()
+print()
 
