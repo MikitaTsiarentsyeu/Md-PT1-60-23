@@ -1,0 +1,5 @@
+sum_cash = float(input('Какую сумму хотите внести на вклад?: \n'))
+time = int(input('На какой срок хотите внести средства (в днях)?:\n'))
+interest_rate = float(input('Под какой процент хотите внести средства?:\n'))
+income_cash = sum_cash * (((time/365) * (interest_rate/100)) + 1)
+print('По окончании периода действия вклада банк вам выдаст', int(income_cash // 1), 'руб.', round((income_cash % 1) // 0.01), 'коп.')
