@@ -1,0 +1,7 @@
+
+for smp[i] in range(len(smp)):
+        if x[i] > smp[r]:
+            del smp [r]
+        r=r-1
+
+print (smp)

@@ -50,3 +50,4 @@ else:
     else:
         print('без ' + word_base.get(f'{60 - int(time[3:5])}_3') + ' минут ' + word_base.get(
             f'{int(time[0:2]) + 1}_1'))
+
