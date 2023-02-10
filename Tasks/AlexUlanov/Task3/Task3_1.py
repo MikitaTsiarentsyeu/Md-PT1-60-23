@@ -1,3 +1,5 @@
+#1. Write a program that takes a string as input from a user and returns the number of vowels in the string.
+
 def qualityVovels(a):
     Dict1 = ["a", "e", "i", "o", "q", "y", "u"]
     b = 0
