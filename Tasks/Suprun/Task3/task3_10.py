@@ -1,12 +1,17 @@
-n = input("Let's find the largest prime number!\nEnter any numbers(separated by commas)\n")
-n = list(n.split(','))
-lst = []
+print("I can find the largest prime number in the number range you specified")
+f = int(input("Enter the first number of the range:\n"))
+s = int(input("Enter the last number of the range:\n"))
+l = []
+for i in range(f, s):
+    d = 2
+    while i % d != 0:
+        d += 1
+    if d == i:
+        l.append(i)
 m = 0
-for i in n:
-    if (int(i) % 2 != 0 or int(i) == 2) and (int(i) % 3 != 0 or int(i) == 3) and (int(i) % 5 != 0 or int(i) == 5):
-        lst.append(i)
-for i in lst:
-    if int(i) > m:
+for i in range(1, len(l)):
+    if l[i] > l[m]:
         m = i
-print(m)
-    
+print(l[m])
+
+
