@@ -3,5 +3,4 @@ Text = input("Давай.. не ограничивай себя")
 strin = {}
 for i in Text:
     strin = Text.split()
-
 print(len(strin), strin)
