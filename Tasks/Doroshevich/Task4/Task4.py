@@ -1,6 +1,12 @@
 with open("text.txt", 'r') as f:
-    n = int(input("Select the number of characters per line(min - 36):"))
-    with open(f"{n}_simbols_text.txt", 'w') as new:
+    while True:
+        n = input("Select the number of characters per line(min - 36):")
+        if n.isnumeric() and int(n) > 35:
+            n = int(n)
+            break
+        else:
+            print("Wrong data. Please try again.")
+    with open(f"text_{n}_symbols.txt", 'w') as new:
         for line in f:
             while len(line) > n:
                 if line[n] == ' ':
@@ -29,4 +35,4 @@ with open("text.txt", 'r') as f:
                 if len(line) <= n:
                     new.write(line)
                     continue
-    print(f"your formatted text is in a file: '{n}_simbols_text.txt'")
+    print(f"your formatted text is in a file: 'text_{n}_symbols.txt'")
