@@ -1,0 +1,23 @@
+1. Write a program that takes a string as input from a user and returns the number of vowels in the string.
+
+2. Write a program that takes a list of numbers as input and returns the sum of all even numbers in the list.
+
+3. Write a program that takes a string as input and returns a dictionary with the count of each word in the string.
+
+4. Write a program that takes a list of numbers as input and returns the second largest number in the list.
+
+5. Write a program that takes a list of strings as input and returns a list with all strings that have a length greater than 5 characters.
+
+6. Write a program that takes a string as input and returns the string with all vowels removed.
+
+7. Write a program that takes a string as input and returns the string with all capital letters converted to lowercase and vice versa.
+
+8. Write a program that takes a list of numbers as input and returns the average of all numbers in the list.
+
+9. Write a program that takes a string as input and returns the string reversed.
+
+10. Write a program that takes a list of numbers as input and returns the largest prime number in the list.
+
+You can ask a user for lists to be inputed in the classic Python syntax style or element by element.
+
+All parts should be done as a separate .py files with names like "Task3_N.py" where N is a number of a part.
