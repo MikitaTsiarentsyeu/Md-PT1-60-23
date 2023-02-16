@@ -63,15 +63,3 @@ with open ("text.txt", "r", encoding="utf-8") as f:
                         d1 = s%len(Buf)             # Опледелим есть ли еще пробелы из остатка
                         
 print("Ok")
-                                 
-                        
-
-
-                    
-
-
-
-                   
-    
-
-
