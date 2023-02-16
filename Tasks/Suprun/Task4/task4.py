@@ -10,29 +10,26 @@ while True:
     break
 with open("Tasks/Suprun/Task4/text.txt", 'r', encoding='utf-8') as f:
     text = f.read()
-
-#with open("Tasks/Suprun/Task4/new_text.txt", 'w') as new:
-    #while text:
-     #   new.write(' '.join([x + '\n' for x in text.split() if len(text) <= n]))
-      #  break
-new_text = ''
-count = 0
-for i in text.split():
-    count += len(i)
-    if count > n:
-        new_text += '\n'
-        count = len(i)
-    elif new_text != '':
-        new_text += ' '
-        count += 1
-    new_text += i
-new_text = list(new_text.split('\n'))
-max_str = max(new_text)
-for i in new_text:
-    if len(i) < len(max_str):
-        i += ' '
-
-
-#print(max_str)
-with open("Tasks/Suprun/Task4/new_text.txt", 'w') as new:
-    new.write('\n'.join(new_text))
+with open("Tasks/Suprun/Task4/new_text.txt", 'w', encoding='utf-8') as new:
+    new_text = ''
+    count = 0
+    for i in text.split():
+        count += len(i)
+        if count >= n:
+            new_text += '\n'
+            count = len(i)
+        elif new_text != '':
+            new_text += ' '
+            count += 1
+        new_text += i
+    for i in new_text.split('\n'):
+        c = i.count(' ')
+        if len(i) < n and c!=0:
+            s = (n - len(i)) // c
+            p = (n - len(i)) % c
+            if s > 0:
+                i = i.replace(' ', ' ' + ' ' * s)
+            if p > 0:
+                i = i.replace(' ' + ' ' * s, ' ' + ' ' * s + ' ', p)
+        i = i + '\n'
+        new.writelines(i)
