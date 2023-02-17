@@ -19,9 +19,9 @@ with open("text.txt", 'r', encoding = 'utf-8') as f:
         with open("Result.txt", 'a') as new:
             chunk = int(simbol)
             while offset+chunk < size_line:
-                while line[offset+chunk] != chr(32):
+                while line[offset+chunk-1] != chr(32):
                     chunk -= 1
-                new.write((' ' * (int(simbol) - chunk - 1)) + line[offset:offset+chunk] + '\n')
+                new.write(line[offset:offset+chunk].rjust(int(simbol) - 1, ' ') + '\n')
                 offset += chunk
                 chunk = int(simbol)
             new.write(line[offset:size_line] + '\n')        
