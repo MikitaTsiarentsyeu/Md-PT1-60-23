@@ -25,7 +25,7 @@ with open ("new_text.txt", 'w', encoding='utf-8') as new:
         counter += len(i) # !)считаю символы в словах
         if counter >= a: # 2)если слово вмещается в строку 
             text += '\n'   # если слово не вмещается в строку ставлю перенос
-            counter = len(i)  # считаю кол-во символов в слове, кот. не вместилось, затем 5)
+            counter =  len(i)  # считаю кол-во символов в слове, кот. не вместилось, затем 5)
         elif text != '':    
             text += ' '     # 3) ставлю пробел после слова
             counter += 1   # 4) добавляю в счетчик пробел после слова
@@ -33,12 +33,12 @@ with open ("new_text.txt", 'w', encoding='utf-8') as new:
     for i in text.split('\n'):
         c = i.count(' ') #количество вхождений по пробелу в строке
         if len(i) < a and c!=0:
-            x = a - len(i)  // c  # считаю сколько пробелов не хватает 
+            x = (a - len(i))  // c  # считаю сколько пробелов не хватает 
             y = (a - len(i)) % c #излишек
             if x > 0: # увеличиваю расстояние между словами
                 i = i.replace(' ' , '  ' * x) 
             if y > 0:
-                i = i.replace('  ' * x, '  ' * x +' ' , y)
+                i = i.replace('  ' * x, '  ' * x +' ', y)
         text = i + '\n'  
         new.writelines(text)       
 
