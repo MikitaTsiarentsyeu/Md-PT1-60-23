@@ -8,9 +8,9 @@ while True:
         print("Число должно быть больше 35!") 
         continue
     break   
-with open("text.txt", 'r') as f:
+with open("text.txt", 'r', encoding='utf-8' ) as f:
     line = f.read()
-with open ("new_text.txt", 'w') as new:
+with open ("new_text.txt", 'w', encoding='utf-8') as new:
     text = ''
     counter = 0
     # for i in line:
@@ -33,12 +33,12 @@ with open ("new_text.txt", 'w') as new:
     for i in text.split('\n'):
         c = i.count(' ') #количество вхождений по пробелу в строке
         if len(i) < a and c!=0:
-            x = (a - len(i)) // c
+            x = a - len(i)  // c  # считаю сколько пробелов не хватает 
             y = (a - len(i)) % c #излишек
             if x > 0: # увеличиваю расстояние между словами
-                i = i.replace(' ' , ' ' + ' ' * x) 
+                i = i.replace(' ' , '  ' * x) 
             if y > 0:
-                i = i.replace(' ' + '  ' * x, ' ' + ' ' * x + ' ', y)
+                i = i.replace('  ' * x, '  ' * x +' ' , y)
         text = i + '\n'  
         new.writelines(text)       
 
