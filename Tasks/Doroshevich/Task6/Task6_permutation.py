@@ -1,15 +1,18 @@
 def permutation(s):
+    
     if len(s) == 1:
         return [s]
 
     l = []
-    for i in range(len(s)):
-        for j in permutation(s.replace(s[i],'', 1)):
-            l.append(s[i] + j)
 
-    return sorted(list(set(l)))
+    for i in s:
+        for j in permutation(s.replace(i, '', 1)):
+            if i+j not in l:
+                l.append(i + j) 
 
-print(permutation('brain'))
+    return l
+
+print(permutation('abba'))
 
 
 
