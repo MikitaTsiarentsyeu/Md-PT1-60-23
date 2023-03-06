@@ -1,0 +1,5 @@
+1. Write a function that takes two numbers as input and returns their division. Handle the ZeroDivisionError and return "Cannot divide by zero" if the denominator is zero.
+2. Write a function that reads a file and returns its contents as a string. Handle the FileNotFoundError and return "File not found" if the file does not exist.
+3. Write a function that takes a list of integers as input and returns the sum of all even numbers in the list. Handle the TypeError and return "Invalid input type" if the input is not a list or not every element is int.
+4. Write a decorator function that logs the execution time, arguments and return value of a function to a file.
+5. Write a decorator function that caches the return value of a function with a dictionary. If the function is called again with the same arguments, return the cached value instead of computing it again.
