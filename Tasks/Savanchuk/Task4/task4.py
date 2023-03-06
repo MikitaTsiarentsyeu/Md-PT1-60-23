@@ -31,14 +31,18 @@ with open ("new_text.txt", 'w', encoding='utf-8') as new:
             counter += 1   # 4) добавляю в счетчик пробел после слова
         text += i        # 5) Добавляю слово в строку
     for i in text.split('\n'):
-        c = i.count(' ') #количество вхождений по пробелу в строке
-        if len(i) < a and c!=0:
-            x = (a - len(i))  // c  # считаю сколько пробелов не хватает 
-            y = (a - len(i)) % c #излишек
-            if x > 0: # увеличиваю расстояние между словами
-                i = i.replace(' ' , '  ' * x) 
-            if y > 0:
-                i = i.replace('  ' * x, '  ' * x +' ', y)
+        x = a - len(i)
+        while x > 0:
+            i = i.replace(' ','  ', x)
+            x = a - len(i)
+        # c = i.count(' ') #количество вхождений по пробелу в строке
+        # if len(i) < a and c!=0:
+        #     x = (a - len(i))  // c  # считаю сколько пробелов не хватает 
+        #     y = (a - len(i)) % c #излишек
+        #     if x > 0: # увеличиваю расстояние между словами
+        #         i = i.replace(' ' , '  ' * x) 
+        #     if y > 0:
+        #         i = i.replace('  ' * x, '  ' * x +' ', y)
         text = i + '\n'  
         new.writelines(text)       
 
