@@ -5,7 +5,7 @@ import time
 # Handle the ZeroDivisionError and return "Cannot divide by zero" if the denominator is zero.
 
 
-def division(num1: int, num2: int):
+def division(num1: int, num2: int) -> int:
     try:
         return int(num1/num2) if num1 % num2 == 0 else round(num1/num2, 2)
     except ZeroDivisionError:
@@ -20,13 +20,18 @@ print(division(True, 3))
 
 files_lst = ["text.txt", "another_text.txt", "whatever.txt"]
 
-for f in files_lst:
-    try:
-        with open(f) as file:
-            lines = "; ".join("".join(file.readlines()).split("\n"))
-            print(lines)
-    except FileNotFoundError:
-        print(f"{f} - file was not found")
+"""Checking 1 file that exists and failing to open the others"""
+def file_reader(files_lst: list) -> str:
+    for f in files_lst:
+        try:
+            with open(f) as file:
+                lines = "".join("".join(file.readlines()))
+                print(lines)
+        except FileNotFoundError:
+            print(f"{f} - file was not found")
+
+
+file_reader(files_lst)
 
 
 # 3. Write a function that takes a list of integers as input and returns the sum of all even numbers in the list.
@@ -87,12 +92,11 @@ print(sum_func(200, 5))
 def cached_values(func):
     dct = {}
     def wrapper(*args, **kwargs):
-        if args in dct.keys():
-            return dct[args]
-        else:
+        dct_key = (args, tuple(kwargs.items()))
+        if dct_key not in dct.keys():
             result = func(*args, **kwargs)
-            dct[args] = result
-            return result
+            dct[dct_key] = result
+        return dct[dct_key]
     return wrapper
 
 
