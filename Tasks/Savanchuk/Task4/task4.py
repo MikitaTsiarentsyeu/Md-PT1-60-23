@@ -43,6 +43,7 @@ with open ("new_text.txt", 'w', encoding='utf-8') as new:
         #         i = i.replace(' ' , '  ' * x) 
         #     if y > 0:
         #         i = i.replace('  ' * x, '  ' * x +' ', y)
+
         text = i + '\n'  
         new.writelines(text)       
 

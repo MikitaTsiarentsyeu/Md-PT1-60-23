@@ -1,0 +1,12 @@
+1. Write a function that takes two integers as arguments and returns their sum.
+
+2. Write a function that takes a list of strings as an argument and returns a new list of strings that are all reversed.
+
+3. Write a function that takes a list of strings as an argument and returns a new list with all the strings that have a length greater than 5.
+
+4. Write a function that takes a string as an argument and returns two numbers, first for count of lower case symbols, second for count of the upper case symbols in the initial string.
+
+5. Write a function that takes an ordered list of numbers without duplicates and returns a string with ranges for those numbers, check the example below:
+get_ranges([0, 1, 2, 3, 4, 7, 8, 10])  ->  "0-4, 7-8, 10"
+get_ranges([4,7,10])  -> "4, 7, 10"
+get_ranges([2, 3, 8, 9])  -> "2-3, 8-9"

@@ -1,0 +1,6 @@
+1. Write a recursive function to reverse a string.
+2. Write a recursive function to check whether a given string is a palindrome.
+3. Write a recursive function to count the number of occurrences of a given character in a string.
+4. Write a recursive function to calculate the power of a given number.
+5. Write a recursive function to find the nth number in the Fibonacci sequence.
+0, 1, 2, 3, 5, 8, 13, 21
