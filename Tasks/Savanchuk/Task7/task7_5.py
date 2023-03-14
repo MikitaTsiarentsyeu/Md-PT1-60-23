@@ -3,13 +3,13 @@
 #If the function is called again with the same arguments, 
 #return the cached value instead of computing it again.
 def cashing(func):
+    dict = {}
     def wrapper(*args):
-        dict = {}
-        res = func(*args)
-        if args in dict.keys():
-            return dict[args]
+        res = func(*args)      
+        if args in dict.keys():    # если 25, 19 уже в кэш
+            return dict[args]     # вернуть значение из кэш
         else:
-            dict[args] = res
+            dict[args] = res  # иначе знач 25, 19 присвоить 44 и добавить в кэш
             return res
 
     return wrapper
@@ -19,22 +19,3 @@ def sum(a, b):
 print(sum(25, 19))
 
 
-# def cached_values(func):
-#     dct = {}
-#     def wrapper(*args, **kwargs):
-#         if args in dct.keys():
-#             return dct[args]
-#         else:
-#             result = func(*args, **kwargs)
-#             dct[args] = result
-#             return result
-#     return wrapper
-
-
-
-# @cached_values
-# def sum_func(a, b):
-#     return a+b
-
-
-# print(sum_func(5,20))
