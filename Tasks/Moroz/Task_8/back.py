@@ -20,8 +20,7 @@ def search(option, searched_str):
     for dct in repo:
         if searched_str in dct[option]:
             yield f"'{dct['title'].title()}': Directed by {dct['directors_name']}, {dct['year']}, {dct['genre']}"
-        else:
-            pass
+
 
 
 
