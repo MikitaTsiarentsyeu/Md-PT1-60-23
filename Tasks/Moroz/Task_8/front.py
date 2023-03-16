@@ -3,7 +3,9 @@ from simple_colors import red, green, yellow, blue
 
 
 
-def search_for_movie(option_answer, searched_str):
+def search_for_movie(option_answer: int, searched_str: str):
+    """Will return the result where the chosen search option (ex. 'title') consists of the searched string.
+    """
     output = back.search(option_answer, searched_str)
     count = 0
     movies = ''
@@ -18,6 +20,7 @@ def search_for_movie(option_answer, searched_str):
 
 
 def no_repo():
+    """If there is no list of dict 'repo' it will ask to create a record"""
     print(blue("\nYou don't have any saved movies. Would you like to add one? y/n", 'italic'))
     answer_y = input(yellow("Enter 'y' or 'n': "))
     if answer_y == "y":
@@ -27,6 +30,7 @@ def no_repo():
 
 
 def search_options():
+    """Asking to choose one of the search options by number"""
     options = {1: 'title', 2: 'genre', 3: 'year', 4: 'director'}
     for key, value in options.items():
         print(f"{key}. {value.title()}")
@@ -37,6 +41,7 @@ def search_options():
 
 
 def ask_for_search():
+    """Will print out anything that was found consider to chosen search option and search string """
     print("\nHow would you like to search? Choose the number")
     option_answer = search_options()
     searched_str = input()
@@ -44,6 +49,7 @@ def ask_for_search():
 
 
 def num_option_checker():
+    """Checking if the input is valid (int, 1-4)"""
     answer_2 = input(yellow("\nEnter the number: "))
     if answer_2.isdigit() and 0 < int(answer_2) < 5:
         return answer_2
@@ -54,12 +60,20 @@ def num_option_checker():
 
 
 def new_record():
+    """Will create a new dict and store it to the list 'repo' """
     title = input(yellow("\nEnter a title: "))
     directors_name = input(yellow("Enter a director's name: "))
     year = input(yellow("Enter a year: "))
     genre = input(yellow("Enter a genre: "))
     back.add_record(title, directors_name, year, genre)
     print(green("\nThe new record was added successfully!"))
+
+
+def all_movies():
+    """Will print all movies from the list 'repo' """
+    print(blue("\nHere is the list of movies:", 'italic'))
+    back.list_of_movies()
+
 
 
 def main_cycle():
@@ -82,15 +96,13 @@ def main_cycle():
             print("\nDo you wanna check your records? y/n")
             answer_y = input(yellow("Enter 'y' or 'n': "))
             if answer_y == "y":
-                print("\nHere is the list of movies:")
-                back.list_of_movies()
+                all_movies()
 
         elif answer == '3':
             if not back.repo:
                 no_repo()
             else:
-                print(blue("\nHere is the list of movies:", 'italic'))
-                back.list_of_movies()
+                all_movies()
 
         elif answer == '4':
             break
