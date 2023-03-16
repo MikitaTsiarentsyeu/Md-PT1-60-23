@@ -7,7 +7,8 @@ def quit():
 
 
 def get_all_bracelets():
-    output = logic.get_all_bracelets()
+    # output = get_all_bracelets()
+    output = logic.search('', '')
     print(f"\nAll of your braselets:\n{output}" if output else "Ops")
     anything_else()
 
@@ -63,6 +64,7 @@ def search_by_color():
     print_output(output)
     anything_else()
 
+
 def search_by_size():
     size = ask_for_size()
     output = logic.search('size', size)
@@ -78,8 +80,8 @@ def search_by_sex():
 
 
 def print_output(output):
-    print(f"It's all with this param:\n{output}" if output else "No bracelets with this param")
-
+    print(
+        f"It's all with this param:\n{output}" if output else "No bracelets with this param")
 
 
 def anything_else():
@@ -114,7 +116,7 @@ def search_main():
 
 
 def main_choice():
-    print("\nHi bro! What will we do today?")    
+    print("\nHi bro! What will we do today?")
     while True:
         print("\n1. Show all bracelets in stock\n2. Add new bracelet(s)\n3. Search any bracelet(s)\n0. Quit program")
         answer = input()
