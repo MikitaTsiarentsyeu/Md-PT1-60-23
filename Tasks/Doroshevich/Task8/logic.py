@@ -2,6 +2,19 @@ import csv
 import sys
 
 
+class Bracelet:
+    def __init__(self, material, color, size, sex):
+        self.__material = material
+        self.__color = color
+        self.__size = size
+        self.__sex = sex
+
+    def add_new_bracelet(self):
+        with open("file.csv", 'a', newline='\n') as f:
+            writer = csv.writer(f)
+            writer.writerow([self.__material, self.__color, self.__size, self.__sex])
+
+
 def quit():
     return sys.exit()
 
@@ -15,12 +28,6 @@ def quit():
 #             return '\n'.join([', '.join([y for y in x]) for x in l])
 #     except FileNotFoundError:
 #         return False
-
-
-def add_new_bracelet(material, color, size, sex):
-    with open("file.csv", 'a', newline='\n') as f:
-        writer = csv.writer(f)
-        writer.writerow([material, color, size, sex])
 
 
 def search(param, value):
