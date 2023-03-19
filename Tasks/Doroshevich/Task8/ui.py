@@ -18,7 +18,8 @@ def add_new_bracelet():
     color = ask_for_color()
     size = ask_for_size()
     sex = ask_for_sex()
-    logic.add_new_bracelet(material, color, size, sex)
+    # logic.add_new_bracelet(material, color, size, sex)
+    logic.Bracelet(material, color, size, sex).add_new_bracelet()
     print("New bracelet added successfully!")
     anything_else()
 
