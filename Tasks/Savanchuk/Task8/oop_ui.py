@@ -1,12 +1,16 @@
-import logik
+import oop_logik
 
 def add_newRecord():
-    biblio_data = input("Enter title, artist/director, year, genre separated by spaces\n")
-    biblio_data = list(biblio_data.title().split())
-    logik.add_newRecord(biblio_data)
+    title = input("Enter title\n").title()
+    artist = input("Enter artist\n").title()
+    year = input("Enter year\n").title()
+    genre = input("Enter genre\n").title()
+
+    biblio = oop_logik.MovieBiblio(title, artist, year, genre)
+    oop_logik.MovieBiblio.writing_to_file(biblio)
 
 def list_allAlbums():
-    read = logik.list_allAlbums()
+    read = oop_logik.MovieBiblio.list_allAlbums()
     print(read)
 
 def search_by(gener):
@@ -16,10 +20,9 @@ def search_by(gener):
         while True:
             for i in gener:
                 if name in i:
-                #result = next(item)
-                    print(f"{next(gener)}\n")#f"title: {result["title"]}, artist: {result["artist/director"]}, year: {result["year"]}, genre:{result["genre"]}")
-            else:
-                next(gener) 
+                    print(f"{next(gener)}\n")
+                else:
+                    next(gener) 
     except StopIteration:
         print("Nothing found!")            
 
@@ -37,13 +40,13 @@ def main_cycle():
             print("\n1.Serch by title\n2.Serch by artist/director\n3.Serch by year\n4.Serch by genre")
             answer2 = input()
             if answer2 == "1":
-                search_by(logik.search_title())
+                search_by(oop_logik.MovieBiblio.search_title())
             elif answer2 == "2":
-                search_by(logik.search_artist())
+                search_by(oop_logik.MovieBiblio.search_artist())
             elif answer2 == "3":
-                search_by(logik.search_year())
+                search_by(oop_logik.MovieBiblio.search_year())
             elif answer2 == "4":
-                search_by(logik.search_genre())
+                search_by(oop_logik.MovieBiblio.search_genre())
             else:
                 break    
         elif answer == "4":
