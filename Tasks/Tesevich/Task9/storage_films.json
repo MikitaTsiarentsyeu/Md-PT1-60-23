@@ -1,0 +1,26 @@
+[
+	{
+		"1886cd8e-8ae1-4d00-8318-271f25b54af9": {
+			"film": "The Godfather",
+			"autor": "Francis Ford Coppola",
+			"year": "1972",
+			"genre": "Crime Drama"
+		}
+	},
+	{
+		"bfea244f-8e6b-45fd-80ef-e2cffacbd2f2": {
+			"film": "The Shawshank Redemption",
+			"autor": "Frank Darabont",
+			"year": "1994",
+			"genre": "Drama"
+		}
+	},
+	{
+		"314034b1-d2dd-4353-89bd-8bb668e57cf4": {
+			"film": "1",
+			"autor": "2",
+			"year": "3",
+			"genre": "4"
+		}
+	}
+]
