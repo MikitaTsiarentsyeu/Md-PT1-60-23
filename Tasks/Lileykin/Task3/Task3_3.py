@@ -1,0 +1,5 @@
+print("Enter text \n")
+s = input()
+words = s.split()
+count_words = len(words)
+print(count_words)
