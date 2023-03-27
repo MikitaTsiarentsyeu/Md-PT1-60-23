@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flexbox Example</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		header, footer {
+			height: 50px;
+			background-color: #333;
+			color: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.footer {
+			    position: fixed;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+		}
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin: 0 auto;
+			max-width: 960px;
+			padding: 20px;
+		}
+		.column {
+			flex-basis: calc(33.33% - 20px);
+			background-color: #f2f2f2;
+			margin-bottom: 20px;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+		.image {
+			max-width: 100%;
+		}
+		.column:last-child {
+			margin-bottom: 0;
+		}
+	</style>
+	<script>
+		function validate(event){
+
+			alert("validation started!");
+
+			let name = document.forms['myForm']["name"].value;
+			let dob = document.forms['myForm']["dob"].value;
+
+			if (dob == ""){
+				alert("Date of birth must be filled out!");
+				event.preventDefault();
+				return false;
+			}
+
+			let dobDate = new Date(dob);
+			let today = new Date();
+			let age = today.getFullYear()-dobDate.getFullYear();
+			if (age < 18){
+				alert("You must be at least 18 years to register!");
+				event.preventDefault();
+				return false;
+				//check months and days also
+			}
+
+			if (name == ""){
+				alert("Name must be filled out!");
+				event.preventDefault();
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Flexbox Example</h1>
+	</header>
+	<div class="container">
+		<div class="column">
+			<h2>Column 1</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel hendrerit nibh, vel dapibus velit. Aliquam sit amet libero dolor. Sed euismod ipsum quis tortor rhoncus, ac imperdiet turpis tempus.</p>
+			<img width="100%" src="psina.jpg" />
+		</div>
+		<div class="column">
+			<h2>Column 2</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel hendrerit nibh, vel dapibus velit. Aliquam sit amet libero dolor. Sed euismod ipsum quis tortor rhoncus, ac imperdiet turpis tempus.</p>
+			<h1>Registration Form</h1>
+			<form name="myForm" onsubmit="validate(event)" method="post" action="http://fe.it-academy.by/TestForm.php">
+				Name: <input id="name_input" type="text" name="name"><br>
+				Date of Birth: <input id="dob_input" type="date" name="dob"><br>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+		<div class="column">
+			<h2>Column 3</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel hendrerit nibh, vel dapibus velit. Aliquam sit amet libero dolor. Sed euismod ipsum quis tortor rhoncus, ac imperdiet turpis tempus.</p>
+			<img width="100%" src="psina.jpg" />
+		</div>
+	</div>
+	<footer class="footer">
+		<p>&copy; 2023 Flexbox Example</p>
+	</footer>
+</body>
+</html>
