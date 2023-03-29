@@ -51,10 +51,11 @@ def ask_for_search():
 def num_option_checker():
     """Checking if the input is valid (int, 1-4)"""
     answer_2 = input(yellow("\nEnter the number: "))
-    while answer_2.isdigit() and not 0 < int(answer_2) < 5:
+    if answer_2.isdigit() and 0 < int(answer_2) < 5:
+        return answer_2
+    else:
         print(red("\nEnter the number between 1 and 4. Let's try again!", 'italic'))
-        continue
-    return answer_2
+        return num_option_checker()
 
 
 def new_record():
