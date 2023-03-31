@@ -6,11 +6,11 @@ def add_newRecord():
     year = input("Enter year\n").title()
     genre = input("Enter genre\n").title()
 
-    biblio = oop_logik.MovieBiblio(title, artist, year, genre)
-    oop_logik.MovieBiblio.writing_to_file(biblio)
+    #biblio = oop_logik.MovieBiblio(title, artist, year, genre)
+    oop_logik.MovieBiblioManager.writing_to_file(title, artist, year, genre)
 
 def list_allAlbums():
-    read = oop_logik.MovieBiblio.list_allAlbums()
+    read = oop_logik.MovieBiblioManager.list_allAlbums()
     print(read)
 
 def search_by(gener):
@@ -24,8 +24,8 @@ def search_by(gener):
                 else:
                     next(gener) 
     except StopIteration:
-        print("Nothing found!")            
-
+        print("Nothing found!")        
+    
 def main_cycle():
     while True:
         print("\nSelect an item from the menu:")
@@ -40,13 +40,13 @@ def main_cycle():
             print("\n1.Serch by title\n2.Serch by artist/director\n3.Serch by year\n4.Serch by genre")
             answer2 = input()
             if answer2 == "1":
-                search_by(oop_logik.MovieBiblio.search_title())
+                search_by(oop_logik.MovieBiblioManager.search_title())
             elif answer2 == "2":
-                search_by(oop_logik.MovieBiblio.search_artist())
+                search_by(oop_logik.MovieBiblioManager.search_artist())
             elif answer2 == "3":
-                search_by(oop_logik.MovieBiblio.search_year())
+                search_by(oop_logik.MovieBiblioManager.search_year())
             elif answer2 == "4":
-                search_by(oop_logik.MovieBiblio.search_genre())
+                search_by(oop_logik.MovieBiblioManager.search_genre())
             else:
                 break    
         elif answer == "4":

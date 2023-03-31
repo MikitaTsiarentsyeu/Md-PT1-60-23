@@ -1,9 +1,5 @@
 import back
 
-
-def print_rez(i):
-    print (f"Film: {i.get('film')}, Autor: {i.get('autor')}, Year: {i.get('year')}, Genre: {i.get('genre')}")
-
 def error_input():
     print('\nIncorrect input, try again\n')
     continue_funk() 
@@ -17,8 +13,9 @@ def continue_funk():
         pass
 
 def all_films():
-    for i in back.Films.data_reader():
-        print_rez(i)
+    x = back.Film_Manager()
+    print(x.get_all())
+    
 
 def add_film():
     print('Enter the title')
@@ -29,38 +26,24 @@ def add_film():
     year = input()
     print('Enter the genre')
     genre = input()
-    new = back.Films(film,artist,year,genre)
-    back.Films.data_writer(new)
-
+    new = back.Film_Manager() 
+    new.add_new_entry(film, artist, year, genre)
     print(f'\nYou add Title: {film}, Artist: {artist}, Year: {year}, Genre: {genre}')
 
-def serch_by_film():
-    print('Input your film')
-    y = input()
-    for i in back.Films.search(y,'film'):
-        print_rez(i)
-
-def serch_by_artist():
-    print('Input your artist')
-    y = input()
-    for i in back.Films.search(y,'autor'):
-        print_rez(i)
-    
-def serch_by_year():
-    print('Input your year')
-    y = input()
-    for i in back.Films.search(y,'year'):
-        print_rez(i)
 
 def serch_by(by_what):
     print(f'Enter the {by_what} you are looking for')
     x=0
     y = input()
-    for i in back.Films.search(y,f'{by_what}'):
-        print_rez(i)
-        x=+1
-    if x ==0:
+    serch = back.Film_Manager()
+    rez = serch.search(y,f'{by_what}')
+    if len(rez) <1:
         print('Nothing found')
+    else:
+        print("Your result:")
+        for i in rez:
+            print (f"Film: {i.get('film')}, Autor: {i.get('autor')}, Year: {i.get('year')}, Genre: {i.get('genre')}")
+
 
 def main_men():
     print('Select a menu item:\n1. Browse all films\n2. Add new\n3. Search\n4. Exit')
