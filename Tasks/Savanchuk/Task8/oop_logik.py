@@ -1,4 +1,5 @@
 import json
+
 class MovieBiblio:
 
     def __init__(self, title, artist, year, genre):
@@ -6,6 +7,7 @@ class MovieBiblio:
         self.__artist = artist
         self.__year = year
         self.__genre = genre
+        self.__biblio = []
         
     def get_title(self):
         return self.__title
@@ -32,13 +34,31 @@ class MovieBiblio:
     year = property(get_year, set_year)
     genre = property(get_genre, set_genre)
 
-    def writing_to_file(self):
+    def add_biblio_data(self, title):
+        if title not in self.__biblio:
+            self.__biblio.append({'title':self.title, 'artist':self.artist, 'year':self.year, 'genre':self.genre})   
+            
+    def to_dict(self):
+        return {'title':self.title, 'artist':self.artist, 'year':self.year, 'genre':self.genre}    
+    # def toJSON(self):
+    #     return json.dumps(self, default=lambda o: o.__dict__, 
+    #         sort_keys=True, indent=4)
+        
+class MovieBiblioManager:    
+
+    def writing_to_file(title, artist, year, genre):
+       
+        entry = MovieBiblio(title, artist, year, genre)
+        entry.add_biblio_data(title)
+        
+        
         with open("biblio.json", "r") as f:
-            data = json.loads(f.read())
-            data.append({'title':self.title, 'artist':self.artist, 'year':self.year, 'genre':self.genre})
+            data = json.loads(f.read())    
+            data.append(MovieBiblio.to_dict(entry))
         with open("biblio.json", "w") as f:
             json.dump(data, f)
-        
+
+           
     def list_allAlbums():
         with open("biblio.json", "r") as f:
             read = f.read()
