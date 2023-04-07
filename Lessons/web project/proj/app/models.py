@@ -6,6 +6,9 @@ class Author(models.Model):
     name = models.CharField(max_length=100)
     test_field = models.CharField(max_length=100)
 
+    def __str__(self) -> str:
+        return self.email
+
 class Post(models.Model):
 
     POST_TYPES = [('c', 'copyright'), ('n', 'native')]
@@ -18,4 +21,7 @@ class Post(models.Model):
     post_type = models.CharField(choices=POST_TYPES, max_length=1)
 
     author = models.ForeignKey('Author', on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return self.title
 

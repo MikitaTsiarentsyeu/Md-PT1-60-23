@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<a href="{% url 'post' post.id %}">
+		<h1>{{ post.title }}</h1>
+	</a>
+	<p>by {{ post.author.name }}</p>
+	{% if post.image %}
+		<img class="post-image" src="{{ post.image.url }}">
+	{% else %}
+		<p>No image</p>
+	{% endif %}
+{% endblock %}
+	
