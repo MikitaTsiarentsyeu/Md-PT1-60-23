@@ -1,0 +1,59 @@
+
+
+.wrapper, .form {
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+}
+
+.form {
+width: 330px;
+}
+
+img { 
+    width: 500px;    
+}
+
+iframe{ 
+    width: 500px;   
+}
+
+ .wrapper li {
+    color: green;
+    display: flex;
+    margin-top: 20px;
+    transition: transform .6s ease    
+    
+}
+.wrapper span {
+    color: red;
+    opacity: 0;
+}
+.wrapper ul li:hover {
+    color: red;
+    text-decoration: none;
+    transform: scale(1.05);
+    
+    
+} 
+.wrapper ul a:hover span{
+    opacity: 1;
+    top: -1px;
+   }
+
+.wrapper li {
+    
+    justify-content: center;
+
+}
+table td {
+    
+    text-align: left;
+}
+
+
+   
+
+
+
+
