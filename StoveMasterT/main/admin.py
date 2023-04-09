@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Regi
+from .models import Reg
 
 # Register your models here.
-admin.site.register(Regi)
+admin.site.register(Reg)

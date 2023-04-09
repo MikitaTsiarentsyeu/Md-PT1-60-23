@@ -1,19 +1,17 @@
+/* body {
+    background-color: rgb(93, 191, 191);
+} */
 
-
-.wrapper, .form {
+.wrapper {
     display: flex;
     flex-direction: column;
-    text-align: center; 
-}
-
-.form {
-width: 330px;
+    text-align: center;
+      
 }
 
 img { 
-    width: 500px;    
+    width: 500px;  
 }
-
 iframe{ 
     width: 500px;   
 }
