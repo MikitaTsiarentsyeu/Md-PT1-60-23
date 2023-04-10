@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+header, footer {
+    height: 50px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 20px;
+    flex-direction: column;
+}
+.post-image {
+    width: 30%;
+}

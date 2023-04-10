@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import datetime
 import time
 from django.http import HttpResponse, HttpResponseNotFound
 from .models import Author, Post
+from app.forms import forms
 
 # Create your views here.
 def test(request):
@@ -42,3 +43,30 @@ def post(request, post_id):
     # response = f"<h1>{post.title}</h1><p>by {post.author.name}</p>"
     # return HttpResponse(response)
     return render(request, 'post.html', {'post':post})
+
+def add_post(request):
+
+    if request.method == "POST":
+        # form = forms.AddPost(request.POST, request.FILES)
+        form = forms.AddPostModelForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            post_entry = form.save(commit=False)
+            # post_entry = Post()
+            # post_entry.title = form.cleaned_data['title']
+            # post_entry.subtitle = form.cleaned_data['subtitle']
+            # post_entry.content = form.cleaned_data['content']
+            # post_entry.post_type = form.cleaned_data['post_type']
+            # post_entry.image = form.cleaned_data['image']
+            post_entry.issued = datetime.datetime.now()
+            post_entry.author = Author.objects.all()[0] #not final version, will be modified
+
+            post_entry.save()
+            form.save_m2m()
+
+            return redirect('post', post_entry.id)
+    else:
+        # form = forms.AddPost()
+        form = forms.AddPostModelForm
+
+    return render(request, 'add_post.html', {'form':form})
