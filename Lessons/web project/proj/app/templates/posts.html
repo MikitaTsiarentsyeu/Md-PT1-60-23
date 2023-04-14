@@ -6,6 +6,9 @@
 			<h1>{{ post.title }}</h1>
 		</a>
 		<p>by {{ post.author.name }}</p>
+		{% if post.id in viewed_posts %}
+			|viewed|
+		{% endif %}
 		{% if post.image %}
 			<img class="post-image" src="{{ post.image.url }}">
 		{% else %}

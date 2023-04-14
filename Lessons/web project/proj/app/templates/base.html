@@ -11,6 +11,17 @@
 		<a href="{% url 'posts' %}">
 			<h1>My blog</h1>
 		</a>
+		<div id='user_info'>
+			{% if user.is_authenticated %}
+				<p>{{ user.get_username }}</p>
+				{% if perms.app.add_post %}
+					<p><a href="{% url 'add' %}">add post</a></p>
+				{% endif %}
+				<p><a href="{% url 'logout' %}?next={{request.path}}">logout</a></p>
+			{% else %}
+				<a href="{% url 'login' %}?next={{request.path}}">login</a>
+			{% endif %}
+		</div>
 	</header>
 	<div class="container">
 		{% block content %}
