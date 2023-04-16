@@ -1,0 +1,3 @@
+The February TIOBE Index of the most popular programming languages is out, and while the work going on in the background of TIOBE calculations has changed, not much has shifted in the way of rankings.
+Python continues to sit atop the index, with C and Java directly behind it. In Feb. 2021, those three also occupied the top spot, but with Python in the number three position, C at top, and Java in second place.
+Beyond the top three, there hasn’t been much movement in the index, with positions four through eight unchanged from the same time last year. Those slots are occupied, respectively, by C++, C#, Visual Basic, JavaScript and PHP. Positions nine and 10 swapped from Feb. 21 to now, with Assembly Language and SQL now occupying each other’s positions.
