@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Update Note</h2>
+<form method="post">
+   <div class="form-group">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Submit</button>
+   </div>
+</form>
+<a href="{% url 'deletenote' note.id %}"><button class="btn btn-danger" >Delete</button></a>
+{% endblock %}

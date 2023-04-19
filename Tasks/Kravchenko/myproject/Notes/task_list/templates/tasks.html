@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% block content %}
+<h2>All Notes </h2>
+{% if user.is_authenticated %}
+<a href="{% url 'createnote' %} "><button class="btn btn-primary" type = "submit">Add a New Note</button></a>
+<div>
+   {% for note in tasks %}
+   <div class="list-group">
+      <a href="{% url 'updatenote' note.id %}" class="list-group-item list-group-item-action flex-column align-items-start">
+         <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ note.title }}</h5>
+            <small>{{ note.date_created|naturaltime }}</small>
+         </div>
+         <p class="mb-1">{{ note.description| truncatechars:120}}</p>
+      </a>
+   </div>
+   {% endfor %}
+   {% endif %}
+   {% endblock %}
+</div>
