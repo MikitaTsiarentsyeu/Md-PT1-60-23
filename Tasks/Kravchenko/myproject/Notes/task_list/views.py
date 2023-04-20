@@ -24,6 +24,9 @@ class NoteCreateView(CreateView):
     template_name = 'create_note_form.html'
     fields = ['title', 'description']
     success_url = reverse_lazy('notelist')
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class NoteUpdateView(UpdateView):
     model = Note

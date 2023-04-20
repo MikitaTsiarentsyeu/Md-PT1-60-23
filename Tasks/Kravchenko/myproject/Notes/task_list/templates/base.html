@@ -16,15 +16,14 @@
             <div class="col-sm-12 ">
                <div id='user_info'>
                   {% if user.is_authenticated %}
-                     <h2><p>{{ user.get_username }}</p></h2>
-                     <p><a href="{% url 'logout' %}?next={{request.path}}">logout</a></p>
-                  {% else %}
-                     <a href="{% url 'login' %}?next={{request.path}}">login</a>
+                     <h2>Hello, {{ user.get_username }}!</h2>
+                     <a href="{% url 'logout' %}?next={% url 'notelist' %}">
+                        <button class="btn btn-primary float-right" type="submit">Logout</button>
+                     </a>
                   {% endif %}
                </div>
                {% block content %}
                
-            
                {% endblock %}
             </div>
          </div>
