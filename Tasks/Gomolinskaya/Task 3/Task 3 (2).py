@@ -1,4 +1,9 @@
+n = [1, 2, 3, 4, 5, 6]
+def p_even(n):
+   even = [x for x in n if x % 2==0]
+   res = sum(even)
 
-number = [38, 42, 99, 54, 63, 2] 
-
-print(sum(i for i in number if not i % 2 and i != 4))
+   print(res)
+   return res
+    
+p_even(n)
