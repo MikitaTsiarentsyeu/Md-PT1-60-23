@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    justify-content: center;
+}
+
+
+.container {
+    width: 500px;
+}
+
+.serv {
+    float: left;
+    clear: both;
+    width: 400px;
+    text-align: left;
+    margin: 20px 34%;
+}
